@@ -9,12 +9,6 @@
 #                                                                                    #
 ######################################################################################
 
-if ! [ -x "$(command -v curl)" ]; then
-  echo "* curl is required in order for this script to work."
-  echo "* install using apt (Debian and derivatives) or yum/dnf (CentOS)"
-  exit 1
-fi
-
 cd /var/www/pterodactyl
 php artisan down
 curl -L https://github.com/pterodactyl/panel/releases/latest/download/panel.tar.gz | tar -xzv
